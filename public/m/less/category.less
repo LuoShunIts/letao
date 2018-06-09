@@ -1,0 +1,50 @@
+@import "base.less";
+
+
+main {
+    height: 100%;
+    display: flex;
+    background-color: #ccc;
+}
+.category-left {
+    width: 80px;
+    ul {
+        background-color: #fff;
+        li {
+            height: 40px;
+            text-align: center;
+            padding: 10px 0px;
+            color: #666;
+            &.active {
+                background-color: #ccc;
+            }
+            a {
+                color: black;
+            }
+        }
+    }
+    
+}
+
+.category-right {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    .mui-scroll {
+        padding: 10px 10px 0px 10px;
+        min-height: 101%;
+        .mui-row {
+            background-color: #fff;
+            a {
+                display: block;
+                img {
+                    width: 100%;
+                }
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入站点图标 -->
+    <link rel="stylesheet" href="./images/favicon.ico">
+    <!-- 引入mui的css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图片的css文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入分类的less文件 -->
+    <link rel="stylesheet/less" href="./less/category.less">
+    <!-- 引入less.js文件 -->
+    <script src="./lib/less/less.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="fa fa-arrow-left"></a>
+        <form action="" class="search-form">
+            <input type="search" placeholder="请输入你要找的商品">
+        </form>
+        <a href="#" class="fa fa-search"></a>
+    </header>
+
+    <main>
+        <div class="category-left">
+            <ul>
+                <li class="active">运动馆</li>
+                <li>女士馆</li>
+                <li>男士馆</li>
+                <li>帆布馆</li>
+                <li>户外馆</li>
+            </ul>
+        </div>
+        <div class="category-right">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="mui-row">
+                        <a href="#" class="mui-col-xs-4">
+                            <img src="./images/brand1.png" alt="">
+                            <p>阿迪</p>
+                        </a>
+                        <a href="#" class="mui-col-xs-4">
+                            <img src="./images/brand1.png" alt="">
+                            <p>阿迪</p>
+                        </a>
+                        <a href="#" class="mui-col-xs-4">
+                            <img src="./images/brand1.png" alt="">
+                            <p>阿迪</p>
+                        </a>
+                        <a href="#" class="mui-col-xs-4">
+                            <img src="./images/brand1.png" alt="">
+                            <p>阿迪</p>
+                        </a>
+                        <a href="#" class="mui-col-xs-4">
+                            <img src="./images/brand1.png" alt="">
+                            <p>阿迪</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部导航栏 -->
+    <footer id="footer">
+        <div class="content mui-row">
+            <a href="index.html" class="mui-col-xs-3 fa fa-home active">
+                <span>首页</span>
+            </a>
+            <a href="category.html" class="mui-col-xs-3 fa fa-bars">
+                <span>分类</span>
+            </a>
+            <a href="" class="mui-col-xs-3 fa fa-shopping-cart">
+                <span>购物车</span>
+            </a>
+            <a href="" class="mui-col-xs-3 fa fa-user">
+                <span>会员中心</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- 定义分类左侧模板引擎 -->
+    <script type="text/html" id="categoryLeftId">
+        {{each rows as value i}}
+            <li class="{{i == 0 ? 'active': ''}}">
+                <a href="#" data-id="{{value.id}}">{{value.categoryName}}</a>
+            </li>
+        {{/each}}
+    </script>
+
+    <!-- 定义分类右侧模板引擎 -->
+    <script type="text/html" id="categoryRightId">
+        {{each rows as value i}}
+            <a href="#" class="mui-col-xs-4">
+                <img src="{{value.brandLogo}}" alt="">
+                <p>{{value.brandName}}</p>
+            </a>
+        {{/each}}
+    </script>
+
+    <!-- 引入mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto的文件 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎文件 -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入分类js文件 -->
+    <script src="./js/category.js"></script>
+</body>
+
+</html>

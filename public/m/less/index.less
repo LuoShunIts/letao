@@ -1,29 +1,84 @@
-h1,h2,h3,h4 {
-    margin: 0;
-    padding: 0;
-}
-/* 初始化 */
+@import "base.less";
 
-// 主题颜色
-@ltColor: #006699;
-// 顶部标题 搜索部分
-header {
-    width: 100%;
-    height: 45px;
-    text-align: center;
-    background-color: @ltColor;
-    position: relative;
-    h2 {
-        font-weight: normal;
-        line-height: 45px;
-        font-size: 20px;
-        color: #fff;
-    }
-    .fa-search {
-        position: absolute;
-        right: 10px;
-        top: 12px;
-        font-size: 20px;
-        color: #fff;
+
+// 导航部分
+#nav {
+    padding: 0px 10px;
+    margin-top: 10px;
+    .mui-row {
+        >div>a {
+            display: block;
+            img {
+                width: 100%;
+            }   
+        }
     }
 }
+// 活动部分
+#activity {
+    padding: 0px 10px;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    .mui-row >div {
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+// 品牌专区
+#brand {
+    padding: 0px 10px;
+    .title,.content {
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+// 运动生活专区
+#sport,#girl,#boy {
+    padding: 0px 10px;
+    .title {
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .content {
+        >div {
+            padding: 8px;
+            a {
+                display: block;
+                box-shadow: 0px 0px 3px #666; 
+                text-align: center;
+                padding: 0px 3px 10px;
+                img {
+                    width: 100%;
+                }
+                p {
+                    margin-bottom: 10px;
+                }
+                >span {
+                    color: red;
+                    font-size: 14px;
+                    margin-right: 10px;
+                }
+                del {
+                    color: #ccc;
+                    font-size: 14px;
+                }
+                .mui-btn-primary {
+                    margin-top: 10px;
+                }
+            }
+        } 
+    }
+}
+

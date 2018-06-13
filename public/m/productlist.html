@@ -1,0 +1,111 @@
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>这是商品类别页面的标题</title>
+    <!-- 添加视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 引入站点图标  rel里面要知道icon表示引入文件是一个图标 href的路径就图标路径 -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- 1. 引入mui的css文件 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 2. 引入字体图标的css文件 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 3. 引入分类的less文件 注意rel="stylesheet/less" -->
+    <link rel="stylesheet/less" href="less/productlist.less">
+    <!-- 4. 引入less.js编译器文件 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="search.html" class="fa fa-arrow-left"></a>
+        <h2>搜索中心</h2>
+    </header>
+    <main>
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+
+                <div class="search-form">
+                    <form action="#">
+                        <input type="text" class="search-value" placeholder="请输入你要搜索的内容">
+                        <a href="#" class="search-btn">搜索</a>
+                    </form>
+                </div>
+                <nav id="nav">
+                    <div class="mui-row">
+                        <div class="mui-col-xs-3">
+                            <a href="#">上架时间&nbsp;
+                                <span class="fa fa-angle-down"></span>
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-3">
+                            <a href="#" data-sort-type="price" data-sort="1">价格&nbsp;
+                                <span class="fa fa-angle-down"></span>
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-3">
+                            <a href="#" data-sort-type="num" data-sort="1">销量&nbsp;
+                                <span class="fa fa-angle-down"></span>
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-3">
+                            <a href="#">折扣&nbsp;
+                                <span class="fa fa-angle-down"></span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="search-content">
+                    <div class="mui-row">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部导航栏 -->
+    <footer id="footer">
+        <div class="content mui-row">
+            <a href="index.html" class="mui-col-xs-3 fa fa-home active">
+                <span>首页</span>
+            </a>
+            <a href="category.html" class="mui-col-xs-3 fa fa-bars">
+                <span>分类</span>
+            </a>
+            <a href="" class="mui-col-xs-3 fa fa-shopping-cart">
+                <span>购物车</span>
+            </a>
+            <a href="" class="mui-col-xs-3 fa fa-user">
+                <span>会员中心</span>
+            </a>
+        </div>
+    </footer>
+
+
+    <script type="text/html" id="productListTmp">
+        {{each data as value i}}
+            <div class="mui-col-xs-6">
+                <a href="detail.html?productid={{value.id}}">
+                    <img src="{{value.pic[0].picAddr}}" alt="">
+                    <p>{{value.proName}}</p>
+                    <span>￥{{value.price}}</span>
+                    <del>￥{{value.oldPrice}}</del>
+                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+                </a>
+            </div>
+        {{/each}}
+    </script>
+    <!-- 5. 引入mui的js文件 -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 6. 引入zepto的js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 7. 引入模板引擎的js文件 -->
+    <script src="lib/artTemplate/template.js"></script>
+    <!-- 8. 引入分类的js文件 -->
+    <script src="js/productlist.js"></script>
+</body>
+
+</html>

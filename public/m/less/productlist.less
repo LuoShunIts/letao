@@ -1,0 +1,86 @@
+@import "base.less";
+
+
+main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.mui-scroll-wrapper {
+    position: relative;
+    height: 100%;
+}
+.search-form {
+    form {
+        position: relative;
+        padding: 10px 63px 0px 10px;
+        input {
+            border: 1px solid @ltColor;
+            height: 33px;
+            font-size: 12px;
+            border-radius: 8px 0px 0px 8px;
+        }
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 55px;
+            height: 33px;
+            background-color: @ltColor;
+            text-align: center;
+            line-height: 33px;
+            color: #fff;
+            border-radius: 0px 8px 8px 0px;
+
+        }
+    }
+}
+
+#nav {
+    .mui-row {
+        background-color: #ccc;
+        >div {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+}
+.search-content{
+    .mui-row {
+        >div {
+            padding: 8px;
+            a {
+                display: block;
+                box-shadow: 0px 0px 3px #666; 
+                text-align: center;
+                padding: 0px 3px 10px;
+                img {
+                    width: 100%;
+                }
+                p {
+                    margin-bottom: 10px;
+                    text-overflow: -o-ellipsis-lastline;
+                    overflow: hidden;text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+                >span {
+                    color: red;
+                    font-size: 14px;
+                    margin-right: 10px;
+                }
+                del {
+                    color: #ccc;
+                    font-size: 14px;
+                }
+                .mui-btn-primary {
+                    display: block;
+                    margin: 10px auto 0px;
+                }
+            }
+        } 
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>这是商品类别页面的标题</title>
+    <!-- 添加视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 引入站点图标  rel里面要知道icon表示引入文件是一个图标 href的路径就图标路径 -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- 1. 引入mui的css文件 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 2. 引入字体图标的css文件 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 3. 引入分类的less文件 注意rel="stylesheet/less" -->
+    <link rel="stylesheet/less" href="less/detail.less">
+    <!-- 4. 引入less.js编译器文件 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="search.html" class="fa fa-arrow-left"></a>
+        <h2>搜索中心</h2>
+        <a href="index.html" class="fa fa-home"></a>
+    </header>
+
+    <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <main>
+                <div class="mui-slider">
+
+                </div>
+                <div class="product">
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer>
+        <a href="#" class="fa fa-shopping-cart"></a>
+        <div class="btn-options">
+            <a href="javascript:;" class="btn-addCart mui-btn mui-btn-danger">加入购物车</a>
+            <a href="javescript:;" class="btn-pay mui-btn mui-btn-warning">立即购买</a>
+        </div>
+    </footer>
+    <!-- 定义轮播图的搜索引擎 -->
+    <script type="text/html" id="productSliderTmp">
+        <div class="mui-slider-group mui-slider-loop">
+            {{each pic as value i}} {{if i == 0}}
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#">
+                    <img src="{{pic[pic.length-1].picAddr}}" />
+                </a>
+            </div>
+            {{/if}}
+            <div class="mui-slider-item">
+                <a href="#">
+                    <img src="{{value.picAddr}}" />
+                </a>
+            </div>
+            {{if i == pic.length-1}}
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#">
+                    <img src="{{pic[0].picAddr}}" />
+                </a>
+            </div>
+            {{/if}} {{/each}}
+        </div>
+        <div class="mui-slider-indicator">
+            {{each pic as value i}}
+            <div class="mui-indicator {{i == 0? 'mui-active' : '' }}"></div>
+            {{/each}}
+        </div>
+    </script>
+
+    <!-- 商品信息模板 -->
+    <script type="text/html" id="productDataTmp">
+        <div class="product-title">
+            <p>{{proName}}</p>
+        </div>
+        <div class="product-price">
+            <span>价格 :</span>
+            <strong>￥{{price}}</strong>
+            <del>￥{{oldPrice}}</del>
+        </div>
+        <div class="product-size">
+            <span>尺码 :</span>
+            {{each size as value i}}
+            <i data-size="{{value}}">{{value}}</i>
+            {{/each}}
+        </div>
+        <div class="product-num">
+            <span>数量 :</span>
+            <div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='{{num}}'>
+                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                <input class="mui-numbox-input" type="number" />
+                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+            </div>
+            <span>剩余 :{{num}}件</span>
+        </div>
+    </script>
+    <!--  -->
+    <!-- 5. 引入mui的js文件 -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 6. 引入zepto的js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 7. 引入模板引擎的js文件 -->
+    <script src="lib/artTemplate/template.js"></script>
+    <!-- 8. 引入分类的js文件 -->
+    <script src="js/detail.js"></script>
+</body>
+
+</html>

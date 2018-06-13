@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入站点图标 -->
+    <link rel="stylesheet" href="./images/favicon.ico">
+    <!-- 引入mui的css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图片的css文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入分类的less文件 -->
+    <link rel="stylesheet/less" href="./less/search.less">
+    <!-- 引入less.js文件 -->
+    <script src="./lib/less/less.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="category.html" class="fa fa-arrow-left"></a>
+        <h2>搜索中心</h2>
+    </header>
+
+    <main>
+        <div class="search-form">
+            <form action="#">
+                <input type="text" class="search-value" placeholder="请输入你要搜索的内容">
+                <a href="#" class="search-btn">搜索</a>
+            </form>
+        </div>
+        <div class="search-record">
+            <div>
+                <span>搜索历史</span>
+                <a href="#" class="mui-pull-right clear-record">
+                    <span class="fa fa-trash"></span>清除记录</a>
+            </div>
+            <div class="content">
+               
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部导航栏 -->
+    <footer id="footer">
+        <div class="content mui-row">
+            <a href="index.html" class="mui-col-xs-3 fa fa-home active">
+                <span>首页</span>
+            </a>
+            <a href="category.html" class="mui-col-xs-3 fa fa-bars">
+                <span>分类</span>
+            </a>
+            <a href="" class="mui-col-xs-3 fa fa-shopping-cart">
+                <span>购物车</span>
+            </a>
+            <a href="" class="mui-col-xs-3 fa fa-user">
+                <span>会员中心</span>
+            </a>
+        </div>
+    </footer>
+    <!-- 定义模板引擎 -->
+    <script type="text/html" id="searchRecordTmp">
+        {{if rows.length}}
+            <ul>
+                {{each rows as value i}}
+                    <li class="mui-clearfix">
+                        <span ="mui-pull-left">{{value.search}}</span>
+                        <a href="#" class="fa fa-close" data-id="{{value.id}}"></a>
+                    </li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </script>
+
+    <!-- 引入mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto的文件 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎文件 -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入分类js文件 -->
+    <script src="./js/search.js"></script>
+</body>
+
+</html>
